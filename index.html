@@ -61,7 +61,8 @@
             fag.forEach(fag => {
                 const klon = skabelon.cloneNode(true);
                 // klon.querySelector(".navn").textContent = album.title.rendered;
-                klon.querySelector(".beskrivelse").textContent = fag.content.rendered;
+               // klon.querySelector(".beskrivelse").textContent = fag.beskrivelse;
+                klon.querySelector(".beskrivelse").textContent = fag.title.rendered;
                 listeElm.appendChild(klon);
             })
         }
