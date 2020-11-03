@@ -193,7 +193,6 @@
                 klon.querySelector("h2").textContent = ret.title.rendered;
                 klon.querySelector("img").src = ret.billede.guid;
                 klon.querySelector("#short_text").textContent = ret.kort;
-                klon.querySelector("#price").textContent = ret.pris + "$";
 
                 klon.querySelector(".ret").addEventListener("click", function() {
                     dishClick(ret.id)
