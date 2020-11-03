@@ -49,19 +49,19 @@
         document.addEventListener("DOMContentLoaded", start);
         const listeElm = document.querySelector("#liste");
         const skabelon = document.querySelector("template").content;
-        const url = "http://tlravn.dk/kea/09-tema/passion/wordpress/wp-json/wp/v2/posts"
+        const url = "http://davidpauner.dk/kea/09_CMS/IHS/wordpress/wp-json/wp/v2/specialefag"
         async function start() {
             const resspons = await fetch(url)
             const json = await resspons.json();
             vis(json);
         }
 
-        function vis(albums) {
-            console.log(albums)
-            albums.forEach(album => {
+        function vis(fag) {
+            console.log(fag)
+            fag.forEach(fag => {
                 const klon = skabelon.cloneNode(true);
                 // klon.querySelector(".navn").textContent = album.title.rendered;
-                klon.querySelector(".beskrivelse").innerHTML = album.content.rendered;
+                klon.querySelector(".beskrivelse").textContent = fag.content.rendered;
                 listeElm.appendChild(klon);
             })
         }
