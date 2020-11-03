@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,6 +46,8 @@
 
 
 
+
+
     <script>
         document.addEventListener("DOMContentLoaded", start);
         const listeElm = document.querySelector("#liste");
@@ -61,10 +64,13 @@
             fag.forEach(fag => {
                 const klon = skabelon.cloneNode(true);
                 // klon.querySelector(".navn").textContent = album.title.rendered;
-               // klon.querySelector(".beskrivelse").textContent = fag.beskrivelse;
+                // klon.querySelector(".beskrivelse").textContent = fag.beskrivelse;
                 klon.querySelector(".beskrivelse").textContent = fag.title.rendered;
                 listeElm.appendChild(klon);
             })
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
