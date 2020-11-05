@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+<<<<<<< HEAD
 
 <head>
     <meta charset="utf-8">
@@ -214,3 +215,72 @@
 </body>
 
 </html>
+=======
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#loopview">Albums</a></li>
+                <li><a href="om.html">Om</a></li>
+                <li>Kontakt</li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="startside">
+        <div class="logo"></div>
+        <div id="pil_container" class="pil_position">
+            <a class="explore_album" href="#loopview">
+                EXPLORE ALBUMS
+            </a>
+            <a href="#loopview" id="pil_sprite"></a>
+        </div>
+    </section>
+
+
+    <section id="liste">
+    </section>
+
+    <template>
+        <article class="ret">
+            <img src="" alt="">
+            <h2 class="navn"></h2>
+            <h3 class="kunstner"></h3>
+            <p class="beskrivelse"></p>
+        </article>
+    </template>
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        const listeElm = document.querySelector("#liste");
+        const skabelon = document.querySelector("template").content;
+        const url = "http://davidpauner.dk/kea/09_CMS/IHS/wordpress/wp-json/wp/v2"
+        async function start() {
+            const resspons = await fetch(url)
+            const json = await resspons.json();
+            vis(json);
+        }
+
+        function vis(albums) {
+            console.log(albums)
+            albums.forEach(album => {
+                const klon = skabelon.cloneNode(true);
+                // klon.querySelector(".navn").textContent = album.title.rendered;
+                klon.querySelector(".beskrivelse").textContent = album.content.rendered;
+                listeElm.appendChild(klon);
+            })
+        }
+    </script>
+</body></html>
+>>>>>>> origin/David
