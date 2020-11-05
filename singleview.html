@@ -110,7 +110,7 @@
         document.addEventListener("DOMContentLoaded", getTheDish);
         async function getTheDish() {
 
-            let url = "http://davidpauner.dk/kea/09_CMS/IHS/wordpress/wp-json/wp/v2/specialefag/" + id;
+            let url = "http://davidpauner.dk/kea/09_CMS/IHS/wordpress/wp-json/wp/v2/fag/" + id;
             id;
             let jsonData = await fetch(url);
             theDish = await jsonData.json();
