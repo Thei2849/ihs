@@ -127,11 +127,9 @@
 
         async function getTheDishes() {
 
-<<<<<<< HEAD
-            let url = "http://davidpauner.dk/kea/09_CMS/IHS/wordpress/wp-json/wp/v2/fag";
-=======
+
             let url = "http://davidpauner.dk/kea/09_CMS/IHS/wordpress/wp-json/wp/v2/fag?per_page=100";
->>>>>>> test
+
             let jsonData = await fetch(url);
             theDishes = await jsonData.json();
             console.log("LOADING DONE");
