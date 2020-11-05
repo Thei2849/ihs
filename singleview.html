@@ -56,6 +56,7 @@
 
             color: orangered;
         }
+
     </style>
 </head>
 
@@ -79,20 +80,21 @@
         document.addEventListener("DOMContentLoaded", getTheDish);
         async function getTheDish() {
 
-            let url = "https://mandalskeawebspace.dk/babushkaWP/wordpress/wp-json/wp/v2/mineRetter/" +
-                id;
+            let url = "http://davidpauner.dk/kea/09_CMS/IHS/wordpress/wp-json/wp/v2/specialefag/" + id;
+            id;
             let jsonData = await fetch(url);
             theDish = await jsonData.json();
 
 
             document.querySelector("h2").textContent = theDish.title.rendered;
             document.querySelector("img").src = theDish.billede.guid;
-            document.querySelector("#short_text").textContent = theDish.kort;
-            document.querySelector("#price").textContent = theDish.pris + "$";
             document.querySelector(".ret").addEventListener("click", function() {
                 window.history.back();
             });
 
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
