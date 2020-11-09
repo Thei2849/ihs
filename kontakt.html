@@ -6,7 +6,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0 auto;
+            box-sizing: border-box;
+
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .overskrift,
+        nav {
+            margin: 0 auto;
+            width: 80vw
+        }
+
+        .course_section {
+            max-width: 1200px;
+
+            margin: 0 auto;
+            width: 80vw;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+
+
+
+
+        .filter_nav {
+            display: flex;
+        }
+
+        .filter_nav h3 {
+            margin-right: 12px;
+            cursor: pointer;
+        }
+
+        .ret {
+            cursor: pointer;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+        }
+
+        .valgt {
+
+            color: orangered;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        h1 {
+
+            color: white;
+            margin: 0;
+            text-transform: uppercase;
+            padding: 15px;
+        }
+
+        #top_single {
+            width: 50%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: 80px;
+            margin-top: 50px;
+        }
+
+        .container {
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #69887F;
+
+        }
+
+
+        .tekst {
+            flex-basis: 400px;
+            flex-grow: 1;
+            max-width: 500px;
+
+        }
+
+        .ekstra_tekst {
+            flex-basis: 400px;
+            flex-grow: 1;
+            max-width: 500px;
+            width: 50%;
+        }
+
+        article h2 {
+            padding: 0 0 10px 0;
+            color: black;
+        }
+
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details summary {
+            width: 100%;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid black;
+            position: relative;
+            cursor: pointer;
+            font-size: 1.25rem;
+            font-weight: 300;
+            list-style: none;
+        }
+
+        details summary:after {
+            content: "⇲";
+            color: black;
+            position: absolute;
+            font-size: 1.75rem;
+            line-height: 0;
+            margin-top: 0.75rem;
+            right: 0;
+            font-weight: 200;
+            transform-origin: center;
+            transition: 200ms linear;
+        }
+
+
+
+        details summary {
+            outline: 0;
+        }
+
+        details p {
+            font-size: 0.95rem;
+            margin: 0 0 1rem;
+            padding-top: 1rem;
+        }
+    </style>
 </head>
+
 
 <body>
     <header>
@@ -53,6 +196,40 @@
     </header>
 
 
-    <h1>Kontakt</h1>
+    <div id="top_single">
+        <img id="single_img" src="imgs/skolen.png" alt="" width="1000" height="300">
+        <div class="container">
+            <h1>Kontakt os</h1>
+        </div>
+    </div>
+
+
+
+    <section class="ret">
+
+        <div class="ekstra_tekst">
+            <details>
+                <summary>NAVN*</summary>
+            </details>
+
+            <details>
+                <summary>EMAIL*</summary>
+            </details>
+
+            <details>
+                <summary>BESKED*
+                </summary>
+            </details>
+
+        </div>
+
+        <article class="tekst">
+            <h2>KONTAKT OS</h2>
+
+            <p> Mangler du svar på noget, så er du altid velkommen til at kontakte os. Du kan fange os på telefonnummer (+45) 74 42 18 48 og ellers kan du altid skrive til os ved hjælp af formularen her på siden.
+                <br>Vi glæder os til at høre fra dig.</p>
+        </article>
+    </section>
+
     <script src="script.js"></script>
 </body></html>
