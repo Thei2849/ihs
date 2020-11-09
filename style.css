@@ -13,6 +13,18 @@ body {
     color: #3c3c3c;
 }
 
+/*** fonts ***/
+
+h1 {
+    padding: 30px 0 30px 0;
+}
+
+h2 {
+
+    height: 60px;
+    margin: 0;
+}
+
 
 
 #liste {
@@ -23,7 +35,6 @@ body {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-
 
 }
 
@@ -45,15 +56,12 @@ img {
     width: 100%;
 }
 
-h2 {
 
-    height: 60px;
-    margin: 0;
-}
 
 #filter-menu {
     display: flex;
     margin: 30px 0 30px 0px;
+    flex-direction: column;
 }
 
 .filter_nav {
@@ -84,12 +92,25 @@ h2 {
 /***** header *******/
 
 header {
-
+    display: flex;
     justify-content: space-between;
 
     border-bottom: 1px solid black;
     width: 90vw;
 
+
+}
+
+.logobillede {
+    width: 70px;
+    height: 70px;
+    margin: 20px 0px 20px 0px;
+
+
+}
+
+#logo {
+    margin: 0 0 0 0;
 
 }
 
