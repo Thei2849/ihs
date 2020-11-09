@@ -186,36 +186,52 @@
 
 
 <body>
-    <nav>
-        <a href="fag.html">Fag</a>
-        <a href="ugekurser.html">Ugekurser</a>
-        <div class="dropdown">
-            <button class="dropbtn">Om</button>
-            <div class="dropdown-content">
-                <a href="personale.html">Personale</a>
-                <a href="Bestyrelse.html">Bestyrelse</a>
-                <a href="erhverv.html">Erhverv</a>
-                <a href="elevforening.html">Elevforening</a>
-            </div>
+    <header>
+
+        <div id="logo">
+            <a href="index.html">
+                <img class="logobillede" alt="" src="imgs/IHS-logo%20hvid.png">
+            </a>
         </div>
 
-        <div class="dropdown">
-            <button class="dropbtn">Praktisk</button>
-            <div class="dropdown-content">
-                <a href="rejser.html">Rejser</a>
-                <a href="priser.html">Priser</a>
-                <a href="st%C3%B8ttemuligheder.html">Støttemuligheder</a>
-                <a href="faciliteter.html">Faciliteter</a>
 
 
+
+        <nav class="topnav" id="myTopnav">
+            <a href="fag.html" class="active">Fag</a>
+            <a href="ugekurser.html">Ugekurser</a>
+            <div class="dropdown">
+                <div class="dropbtn">Praktisk
+                    <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="dropdown-content">
+                    <a href="rejser.html">Rejser</a>
+                    <a href="priser.html">Priser</a>
+                    <a href="st%C3%B8ttemuligheder.html">Støttemuligheder</a>
+                    <a href="faciliteter.html">Faciliteter</a>
+                </div>
             </div>
-        </div>
-        <a href="kontakt.html">Kontakt</a>
-        <a href="tilmelding.html">Tilmelding</a>
-    </nav>
+            <div class="dropdown">
+                <div class="dropbtn">Om
+                    <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="dropdown-content">
+                    <a href="personale.html">Personale</a>
+                    <a href="Bestyrelse.html">Bestyrelse</a>
+                    <a href="erhverv.html">Erhverv</a>
+                    <a href="elevforening.html">Elevforening</a>
+                </div>
+            </div>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="tilmelding.html">Tilmelding</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </nav>
+
+    </header>
+
 
     <div id="top_single">
-        <img src="" alt="" width="1000" height="300">
+        <img id="single_img" src="" alt="" width="1000" height="300">
         <div class="container">
             <h2></h2>
         </div>
@@ -277,7 +293,7 @@
 
 
             document.querySelector("h2").textContent = theDish.title.rendered;
-            document.querySelector("img").src = theDish.billede.guid;
+            document.querySelector("#single_img").src = theDish.billede.guid;
             document.querySelector("#beskrivelse").textContent = theDish.beskrivelse;
             document.querySelector(".ret").addEventListener("click", function() {
                 window.history.back();
