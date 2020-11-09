@@ -7,61 +7,261 @@
     <title></title>
     <link rel="stylesheet" href="style.css">
     <style>
+        * {
+            margin: 0 auto;
+            box-sizing: border-box;
 
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .overskrift,
+        nav {
+            margin: 0 auto;
+            width: 80vw
+        }
+
+        .course_section {
+            max-width: 1200px;
+
+            margin: 0 auto;
+            width: 80vw;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+
+
+
+
+        .filter_nav {
+            display: flex;
+        }
+
+        .filter_nav h3 {
+            margin-right: 12px;
+            cursor: pointer;
+        }
+
+        .ret {
+            cursor: pointer;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+        }
+
+        .valgt {
+
+            color: orangered;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        h2 {
+
+            color: white;
+            margin: 0;
+            text-transform: uppercase;
+            padding: 15px;
+        }
+
+        #top_single {
+            width: 50%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: 80px;
+            margin-top: 50px;
+        }
+
+        .container {
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #69887F;
+
+        }
+
+
+        .tekst {
+            flex-basis: 400px;
+            flex-grow: 1;
+            max-width: 500px;
+
+        }
+
+        .ekstra_tekst {
+            flex-basis: 400px;
+            flex-grow: 1;
+            max-width: 500px;
+            width: 50%;
+        }
+
+
+
+        details[open] summary~* {
+            animation: open 0.3s ease-in-out;
+        }
+
+        @keyframes open {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details summary {
+            width: 100%;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid black;
+            position: relative;
+            cursor: pointer;
+            font-size: 1.25rem;
+            font-weight: 300;
+            list-style: none;
+        }
+
+        details summary:after {
+            content: "+";
+            color: black;
+            position: absolute;
+            font-size: 1.75rem;
+            line-height: 0;
+            margin-top: 0.75rem;
+            right: 0;
+            font-weight: 200;
+            transform-origin: center;
+            transition: 200ms linear;
+        }
+
+        details[open] summary:after {
+            transform: rotate(45deg);
+            font-size: 2rem;
+        }
+
+        details summary {
+            outline: 0;
+        }
+
+        details p {
+            font-size: 0.95rem;
+            margin: 0 0 1rem;
+            padding-top: 1rem;
+        }
+
+
+
+
+        a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+        }
+
+        a:hover {
+            background-color: #aabeb8;
+            color: black;
+        }
+
+        .previous {
+            background-color: #69887F;
+            color: white;
+            border-radius: 50%;
+
+        }
     </style>
 </head>
 
 
 <body>
-    <header>
-
-        <div id="logo">
-            <a href="index.html">
-                <img class="logobillede" alt="" src="imgs/IHS-logo%20hvid.png">
-            </a>
+    <nav>
+        <a href="fag.html">Fag</a>
+        <a href="ugekurser.html">Ugekurser</a>
+        <div class="dropdown">
+            <button class="dropbtn">Om</button>
+            <div class="dropdown-content">
+                <a href="personale.html">Personale</a>
+                <a href="Bestyrelse.html">Bestyrelse</a>
+                <a href="erhverv.html">Erhverv</a>
+                <a href="elevforening.html">Elevforening</a>
+            </div>
         </div>
 
+        <div class="dropdown">
+            <button class="dropbtn">Praktisk</button>
+            <div class="dropdown-content">
+                <a href="rejser.html">Rejser</a>
+                <a href="priser.html">Priser</a>
+                <a href="st%C3%B8ttemuligheder.html">Støttemuligheder</a>
+                <a href="faciliteter.html">Faciliteter</a>
 
 
-
-        <nav class="topnav" id="myTopnav">
-            <a href="#home" class="active">Fag</a>
-            <a href="#news">Ugekurser</a>
-            <div class="dropdown">
-                <div class="dropbtn">Praktisk
-                    <i class="fa fa-caret-down"></i>
-                </div>
-                <div class="dropdown-content">
-                    <a href="rejser.html">Rejser</a>
-                    <a href="priser.html">Priser</a>
-                    <a href="st%C3%B8ttemuligheder.html">Støttemuligheder</a>
-                    <a href="faciliteter.html">Faciliteter</a>
-                </div>
             </div>
-            <div class="dropdown">
-                <div class="dropbtn">Om
-                    <i class="fa fa-caret-down"></i>
-                </div>
-                <div class="dropdown-content">
-                    <a href="personale.html">Personale</a>
-                    <a href="Bestyrelse.html">Bestyrelse</a>
-                    <a href="erhverv.html">Erhverv</a>
-                    <a href="elevforening.html">Elevforening</a>
-                </div>
-            </div>
-            <a href="kontakt.html">Kontakt</a>
-            <a href="tilmelding.html">Tilmelding</a>
-            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
-        </nav>
+        </div>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="tilmelding.html">Tilmelding</a>
+    </nav>
 
-    </header>
+    <div id="top_single">
+        <img src="" alt="" width="1000" height="300">
+        <div class="container">
+            <h2></h2>
+        </div>
+    </div>
 
-    <section class="fag">
-        <h2></h2>
-        <div></div>
-        <img class="single_img" src="" alt="">
-        <p id="beskrivelse"></p>
+
+
+    <section class="ret">
+
+        <div class="ekstra_tekst">
+            <details>
+                <summary>Details</summary>
+                <p>
+                    Lorem ipsum dolor sit amet, eu alia suscipit mei. Reque iriure delectus vix id, ex sed forensibus suscipiantur. In eos exerci mollis apeirian, an qui latine alienum. Ad mea libris maluisset, consul assueverit sea ex.
+                </p>
+            </details>
+            <details>
+                <summary>Features</summary>
+                <p>
+                    Lorem ipsum dolor sit amet, eu alia suscipit mei. Reque iriure delectus vix id, ex sed forensibus suscipiantur. In eos exerci mollis apeirian, an qui latine alienum. Ad mea libris maluisset, consul assueverit sea ex.
+                </p>
+            </details>
+            <details>
+                <summary>Information
+                </summary>
+                <p>Lorem ipsum dolor sit amet, eu alia suscipit mei. Reque iriure delectus vix id, ex sed forensibus suscipiantur. In eos exerci mollis apeirian, an qui latine alienum. Ad mea libris maluisset, consul assueverit sea ex. </p>
+            </details>
+            <details>
+                <summary>Specifications
+                </summary>
+                <p>Lorem ipsum dolor sit amet, eu alia suscipit mei. Reque iriure delectus vix id, ex sed forensibus suscipiantur. In eos exerci mollis apeirian, an qui latine alienum. Ad mea libris maluisset, consul assueverit sea ex. </p>
+            </details>
+        </div>
+
+        <article class="tekst">
+            <h1>Singleview</h1>
+
+            <p id="beskrivelse"></p>
+        </article>
+
     </section>
+
+    <a href="#" class="previous">&#8249;</a>
+
+
+
 
     <script>
         let urlParams = new URLSearchParams(window.location.search);
@@ -77,7 +277,7 @@
 
 
             document.querySelector("h2").textContent = theDish.title.rendered;
-            document.querySelector(".single_img").src = theDish.billede.guid;
+            document.querySelector("img").src = theDish.billede.guid;
             document.querySelector("#beskrivelse").textContent = theDish.beskrivelse;
             document.querySelector(".ret").addEventListener("click", function() {
                 window.history.back();
@@ -85,7 +285,4 @@
 
         }
     </script>
-    <script src="script.js"></script>
-
-
 </body></html>
