@@ -69,11 +69,20 @@ img {
 
 
 
-#filter-menu {
+#filter-overskrift {
     display: flex;
     margin: 30px 0 30px 0px;
     flex-direction: column;
+
 }
+
+#filter-menu {
+    display: flex;
+    margin: 30px 0 30px 0px;
+
+
+}
+
 
 .filter_nav {
     display: flex;
