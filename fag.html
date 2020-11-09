@@ -12,14 +12,14 @@
 </head>
 
 <body>
-    <!-- TEMPLATES  -->
+    <!-- Filter TEMPLATES  -->
     <template id="filter_btns_tmpl">
         <h3>Huop</h3>
     </template>
     <!-- template fag-->
     <template id="course_header_tmpl">
         <h1>Huop</h1>
-        <section class="course_section"></section>
+        <section class="fag_section"></section>
     </template>
     <!-- template fag-->
     <template id="fag_tmpl">
@@ -31,47 +31,64 @@
     </template>
 
 
-    <h2>tobias</h2>
 
-    <!-- SITE MENU-->
-    <h1 class="overskrift"></h1>
-    <nav>
-        <a href="fag.html">Fag</a>
-        <a href="ugekurser.html">Ugekurser</a>
-        <div class="dropdown">
-            <button class="dropbtn">Om</button>
-            <div class="dropdown-content">
-                <a href="personale.html">Personale</a>
-                <a href="Bestyrelse.html">Bestyrelse</a>
-                <a href="erhverv.html">Erhverv</a>
-                <a href="elevforening.html">Elevforening</a>
-            </div>
+
+    <!--SITE MENU-->
+
+
+
+    <header>
+
+        <div id="logo">
+            <a href="#logo">
+                <img class="logobillede" alt="" src="img/Tuborg-nul-logo.png">
+            </a>
         </div>
 
-        <div class="dropdown">
-            <button class="dropbtn">Praktisk</button>
-            <div class="dropdown-content">
-                <a href="rejser.html">Rejser</a>
-                <a href="priser.html">Priser</a>
-                <a href="st%C3%B8ttemuligheder.html">Støttemuligheder</a>
-                <a href="faciliteter.html">Faciliteter</a>
 
 
+
+        <nav class="topnav" id="myTopnav">
+            <a href="#home" class="active">Fag</a>
+            <a href="#news">Ugekurser</a>
+            <div class="dropdown">
+                <div class="dropbtn">Praktisk
+                    <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="dropdown-content">
+                    <a href="rejser.html">Rejser</a>
+                    <a href="priser.html">Priser</a>
+                    <a href="st%C3%B8ttemuligheder.html">Støttemuligheder</a>
+                    <a href="faciliteter.html">Faciliteter</a>
+                </div>
             </div>
-        </div>
-        <a href="kontakt.html">Kontakt</a>
-        <a href="tilmelding.html">Tilmelding</a>
+            <div class="dropdown">
+                <div class="dropbtn">Om
+                    <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="dropdown-content">
+                    <a href="personale.html">Personale</a>
+                    <a href="Bestyrelse.html">Bestyrelse</a>
+                    <a href="erhverv.html">Erhverv</a>
+                    <a href="elevforening.html">Elevforening</a>
+                </div>
+            </div>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="tilmelding.html">Tilmelding</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </nav>
 
-    </nav>
+    </header>
 
 
-
-    <!--   Filter  btns -->
-    <nav class="filter_nav">
-        <h3>Alle</h3>
-    </nav>
-    <!--  Dishes  -->
-    <main class="fags course_section"></main>
+    <!--   Filter  navigation -->
+    <section id="filter-menu">
+        <nav class="filter_nav">
+            <h3>Alle</h3>
+        </nav>
+    </section>
+    <!--  fag  -->
+    <main class="fags fag_section"></main>
 
 
     <script>
@@ -184,6 +201,17 @@
         function dishClick(id) {
             console.log("id", id)
             window.location.href = "singleview.html?id=" + id;
+        }
+
+
+        /* BRUGER MENU */
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
         }
     </script>
 </body></html>
