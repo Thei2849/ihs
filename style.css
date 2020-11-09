@@ -137,12 +137,14 @@ header {
 
 .topnav {
     overflow: hidden;
-    padding: 30px 10px 30px 0px;
+    padding: 30px 30px 30px 0px;
     margin: 0;
+
 }
 
 .topnav a {
-    float: right;
+    /*    float: right;*/
+    display: inline-block;
     color: #1d1d1d;
     text-align: center;
     padding: 14px 16px;
@@ -158,11 +160,13 @@ header {
 
 .topnav .icon {
     display: none;
+    font-size: 28px;
 }
 
 .dropdown {
-    float: right;
-    overflow: hidden;
+    display: inline-block;
+    /*    float: right;*/
+    /*    overflow: hidden;*/
 }
 
 .dropdown .dropbtn {
@@ -179,7 +183,7 @@ header {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #6a6a6a;
+    background-color: #e3e3e3;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -200,7 +204,7 @@ header {
 }
 
 .dropdown-content a:hover {
-    background-color: #292929;
+    background-color: #969696;
     color: black;
 }
 
@@ -210,7 +214,7 @@ header {
 
 @media screen and (max-width: 600px) {
 
-    .topnav a:not(:first-child),
+    .topnav a,
     .dropdown .dropbtn {
         display: none;
     }
@@ -218,6 +222,7 @@ header {
     .topnav a.icon {
         float: right;
         display: block;
+
     }
 }
 
@@ -250,5 +255,30 @@ header {
         display: block;
         width: 100%;
         text-align: left;
+    }
+
+    .topnav a {
+        float: left;
+        color: #1d1d1d;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .active {
+        color: #d8d8d8;
+
+
+    }
+
+    .topnav .icon {
+        display: none;
+    }
+
+    .dropdown {
+        display: block;
+        float: left;
+        overflow: hidden;
     }
 }
