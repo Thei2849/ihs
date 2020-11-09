@@ -16,19 +16,17 @@
     <template id="filter_btns_tmpl">
         <h3>Huop</h3>
     </template>
-
+    <!-- template fag-->
     <template id="course_header_tmpl">
         <h1>Huop</h1>
         <section class="course_section"></section>
     </template>
-
-    <template id="ret_tmpl">
-        <section class="ret">
-            <h2></h2>
-            <div></div>
+    <!-- template fag-->
+    <template id="fag_tmpl">
+        <section class="fag">
             <img src="" alt="">
-            <p id="short_text"></p>
-            <p id="price"></p>
+            <h2></h2>
+
         </section>
     </template>
 
@@ -70,7 +68,7 @@
         <h3>Alle</h3>
     </nav>
     <!--  Dishes  -->
-    <main class="retter course_section"></main>
+    <main class="fags course_section"></main>
 
 
     <script>
@@ -79,7 +77,7 @@
 
         let theCategories;
 
-        let theDishes;
+        let theFag;
 
         document.addEventListener("DOMContentLoaded", start);
 
@@ -94,18 +92,18 @@
             theCategories = await jsonData.json();
             generateCategoryBTNs();
 
-            getTheDishes();
+            getTheFag();
 
         }
 
 
-        async function getTheDishes() {
+        async function getTheFag() {
 
 
             let url = "http://davidpauner.dk/kea/09_CMS/IHS/wordpress/wp-json/wp/v2/fag?per_page=100";
 
             let jsonData = await fetch(url);
-            theDishes = await jsonData.json();
+            theFag = await jsonData.json();
             console.log("LOADING DONE");
 
 
@@ -149,9 +147,9 @@
         function filterContent(theFilter) {
             let filtrerede;
             if (theFilter == "alle") {
-                filtrerede = theDishes;
+                filtrerede = theFag;
             } else {
-                filtrerede = theDishes.filter(ret => ret.categories[0] == theFilter);
+                filtrerede = theFag.filter(fag => fag.categories[0] == theFilter);
             }
             console.log(filtrerede);
             showPosts(filtrerede);
@@ -159,19 +157,19 @@
 
         function showPosts(theFilteredJson) {
 
-            let dest = document.querySelector(".retter");
-            let temp = document.querySelector("#ret_tmpl");
+            let dest = document.querySelector(".fags");
+            let temp = document.querySelector("#fag_tmpl");
             dest.innerHTML = "";
 
-            theFilteredJson.forEach(ret => {
+            theFilteredJson.forEach(fag => {
 
                 let klon = temp.cloneNode(true).content;
-                klon.querySelector("h2").textContent = ret.title.rendered;
-                klon.querySelector("img").src = ret.billede.guid;
-                klon.querySelector("#short_text").textContent = ret.kort;
+                klon.querySelector("h2").textContent = fag.title.rendered;
+                klon.querySelector("img").src = fag.billede.guid;
 
-                klon.querySelector(".ret").addEventListener("click", function() {
-                    dishClick(ret.id)
+
+                klon.querySelector(".fag").addEventListener("click", function() {
+                    dishClick(fag.id)
                 });
 
                 dest.appendChild(klon);
