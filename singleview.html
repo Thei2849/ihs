@@ -7,98 +7,59 @@
     <title></title>
     <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: sans-serif;
-            color: #3c3c3c;
-        }
 
-        .overskrift,
-        nav {
-            margin: 0 auto;
-            width: 80vw
-        }
-
-        .course_section {
-            max-width: 1200px;
-
-            margin: 0 auto;
-            width: 80vw;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            grid-gap: 20px;
-        }
-
-        img {
-            width: 100%;
-        }
-
-        h2 {
-
-            height: 60px;
-            margin: 0;
-        }
-
-        .filter_nav {
-            display: flex;
-        }
-
-        .filter_nav h3 {
-            margin-right: 12px;
-            cursor: pointer;
-        }
-
-        .ret {
-            cursor: pointer;
-
-        }
-
-        .valgt {
-
-            color: orangered;
-        }
     </style>
 </head>
 
 
 <body>
-    <nav>
-        <a href="fag.html">Fag</a>
-        <a href="ugekurser.html">Ugekurser</a>
-        <div class="dropdown">
-            <button class="dropbtn">Om</button>
-            <div class="dropdown-content">
-                <a href="personale.html">Personale</a>
-                <a href="Bestyrelse.html">Bestyrelse</a>
-                <a href="erhverv.html">Erhverv</a>
-                <a href="elevforening.html">Elevforening</a>
-            </div>
+    <header>
+
+        <div id="logo">
+            <a href="#logo">
+                <img class="logobillede" alt="" src="imgs/IHS-logo%20hvid.png">
+            </a>
         </div>
 
-        <div class="dropdown">
-            <button class="dropbtn">Praktisk</button>
-            <div class="dropdown-content">
-                <a href="rejser.html">Rejser</a>
-                <a href="priser.html">Priser</a>
-                <a href="st%C3%B8ttemuligheder.html">Støttemuligheder</a>
-                <a href="faciliteter.html">Faciliteter</a>
 
 
+
+        <nav class="topnav" id="myTopnav">
+            <a href="#home" class="active">Fag</a>
+            <a href="#news">Ugekurser</a>
+            <div class="dropdown">
+                <div class="dropbtn">Praktisk
+                    <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="dropdown-content">
+                    <a href="rejser.html">Rejser</a>
+                    <a href="priser.html">Priser</a>
+                    <a href="st%C3%B8ttemuligheder.html">Støttemuligheder</a>
+                    <a href="faciliteter.html">Faciliteter</a>
+                </div>
             </div>
-        </div>
-        <a href="kontakt.html">Kontakt</a>
-        <a href="tilmelding.html">Tilmelding</a>
+            <div class="dropdown">
+                <div class="dropbtn">Om
+                    <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="dropdown-content">
+                    <a href="personale.html">Personale</a>
+                    <a href="Bestyrelse.html">Bestyrelse</a>
+                    <a href="erhverv.html">Erhverv</a>
+                    <a href="elevforening.html">Elevforening</a>
+                </div>
+            </div>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="tilmelding.html">Tilmelding</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+        </nav>
 
-    </nav>
+    </header>
 
-    <h1>Singleview</h1>
-
-
-
-
-    <section class="ret">
+    <section class="fag">
         <h2></h2>
         <div></div>
-        <img src="" alt="">
+        <img class="single_img" src="" alt="">
         <p id="beskrivelse"></p>
     </section>
 
@@ -116,12 +77,18 @@
 
 
             document.querySelector("h2").textContent = theDish.title.rendered;
-            document.querySelector("img").src = theDish.billede.guid;
+            document.querySelector(".single_img").src = theDish.billede.guid;
             document.querySelector("#beskrivelse").textContent = theDish.beskrivelse;
             document.querySelector(".ret").addEventListener("click", function() {
                 window.history.back();
             });
 
         }
+
     </script>
-</body></html>
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
