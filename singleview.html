@@ -99,8 +99,7 @@
         <h2></h2>
         <div></div>
         <img src="" alt="">
-        <p id="short_text"></p>
-        <p id="price"></p>
+        <p id="beskrivelse"></p>
     </section>
 
     <script>
@@ -118,6 +117,7 @@
 
             document.querySelector("h2").textContent = theDish.title.rendered;
             document.querySelector("img").src = theDish.billede.guid;
+            document.querySelector("#beskrivelse").textContent = theDish.beskrivelse;
             document.querySelector(".ret").addEventListener("click", function() {
                 window.history.back();
             });
