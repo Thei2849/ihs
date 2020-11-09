@@ -184,7 +184,6 @@
             border-radius: 50%;
 
         }
-
     </style>
 </head>
 
@@ -297,6 +296,7 @@
 
 
             document.querySelector("h2").textContent = theDish.title.rendered;
+            document.querySelector("h1").textContent = theDish.title.rendered;
             document.querySelector("#single_img").src = theDish.billede.guid;
             document.querySelector("#beskrivelse").textContent = theDish.beskrivelse;
             document.querySelector(".previous").addEventListener("click", function() {
@@ -304,9 +304,6 @@
             });
 
         }
-
     </script>
     <script src="script.js"></script>
-</body>
-
-</html>
+</body></html>
