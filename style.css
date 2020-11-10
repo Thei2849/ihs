@@ -241,7 +241,7 @@ header {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #e3e3e3;
+    background-color: #ffffff;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -260,11 +260,11 @@ header {
 
 .topnav a:hover,
 .dropdown:hover .dropbtn {
-    color: #b1b1b1;
+    color: #69887F;
 }
 
 .dropdown-content a:hover {
-    background-color: #969696;
+    background-color: #ffffff;
     color: black;
 }
 
