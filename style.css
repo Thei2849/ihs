@@ -42,6 +42,14 @@ h3 {
     text-transform: uppercase;
 }
 
+h4 {
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.04rem;
+    line-height: 2rem;
+
+}
+
 
 .fag_container {
     text-align: center;
@@ -61,7 +69,7 @@ p {
 
 #color {
     background-color: #bacec8;
-    height: 70vh;
+    height: 60vh;
     width: 100vw;
     left: 0;
     position: absolute;
@@ -195,15 +203,17 @@ header {
 
 .topnav {
     overflow: hidden;
-    padding: 30px 30px 30px 0px;
+    padding: 30px 0px 30px 0px;
     margin: 0;
 
 }
 
+
+
 .topnav a {
     /*    float: right;*/
     display: inline-block;
-    color: #1d1d1d;
+    /*    color: #1d1d1d;*/
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -211,10 +221,28 @@ header {
 }
 
 .active {
-    color: #d8d8d8;
-
+    color: white;
 
 }
+
+
+/*
+#cta {
+    background-color: #ef6b6b;
+    border-radius: 90px;
+    color: white;
+    font-size: 15px;
+    padding: 12px 50px 12px 50px;
+    margin-left: 20px;
+
+}
+*/
+
+a {
+    color: #1d1d1d;
+    */
+}
+
 
 .topnav .icon {
     display: none;
