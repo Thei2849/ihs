@@ -6,6 +6,7 @@
     margin: 0 auto;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
+
 }
 
 body {
@@ -17,13 +18,30 @@ body {
 
 h1 {
     padding: 30px 0 30px 0;
+    font-weight: 600;
+    font-size: 2.5rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+
 }
 
 h2 {
     color: white;
     font-weight: 300;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.09rem;
+    text-transform: uppercase;
+
 }
+
+h3 {
+
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 0.04rem;
+    text-transform: uppercase;
+}
+
 
 .fag_container {
     text-align: center;
@@ -90,14 +108,14 @@ img {
 
 #filter-overskrift {
     display: flex;
-    margin: 30px 0 30px 0px;
+    margin: 50px 0 30px 0px;
     flex-direction: column;
 
 }
 
 #filter-menu {
     display: flex;
-    margin: 30px 0 30px 0px;
+    margin: 50px 0 50px 0px;
 
 
 }
