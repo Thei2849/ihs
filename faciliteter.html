@@ -18,10 +18,13 @@
         <section class="fag_section"></section>
     </template>
     <!-- template fag-->
-    <template id="fag_tmpl">
+    <template id="fag_tmpl" class="fag_box">
         <section class="fag">
             <img src="" alt="">
-            <h2></h2>
+            <div class="fag_container">
+                <h2></h2>
+            </div>
+
 
         </section>
     </template>
@@ -79,9 +82,14 @@
 
 
     <!--   Filter  navigation -->
-    <section id="filter-menu">
+    <section id="filter-overskrift">
+        <div>
+            <h1>Vores Faciliteter</h1>
+        </div>
 
-        <h1>Vores fag</h1>
+
+    </section>
+    <section id="filter-menu">
 
 
         <nav class="filter_nav">
@@ -108,7 +116,7 @@
         }
 
         async function getTheCategories() {
-            let url = "http://davidpauner.dk/kea/09_CMS/IHS/wordpress/wp-json/wp/v2/categories";
+            let url = "http://davidpauner.dk/kea/09_CMS/IHS/wordpress/wp-json/wp/v2/facilitetstype";
             let jsonData = await fetch(url);
             theCategories = await jsonData.json();
             generateCategoryBTNs();
@@ -121,7 +129,7 @@
         async function getTheFag() {
 
 
-            let url = "http://davidpauner.dk/kea/09_CMS/IHS/wordpress/wp-json/wp/v2/fag?per_page=100";
+            let url = "http://davidpauner.dk/kea/09_CMS/IHS/wordpress/wp-json/wp/v2/facilitet?per_page=100";
 
             let jsonData = await fetch(url);
             theFag = await jsonData.json();
@@ -170,7 +178,7 @@
             if (theFilter == "alle") {
                 filtrerede = theFag;
             } else {
-                filtrerede = theFag.filter(fag => fag.categories[0] == theFilter);
+                filtrerede = theFag.filter(fag => fag.facilitetstype[0] == theFilter);
             }
             console.log(filtrerede);
             showPosts(filtrerede);

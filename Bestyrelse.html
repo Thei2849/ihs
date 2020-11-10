@@ -8,6 +8,35 @@
 </head>
 
 <body>
+    <!-- Filter TEMPLATES  -->
+    <template id="filter_btns_tmpl">
+        <h3>Huop</h3>
+    </template>
+    <!-- template fag-->
+    <template id="course_header_tmpl">
+        <h1>Huop</h1>
+        <section class="fag_section"></section>
+    </template>
+    <!-- template fag-->
+    <template id="fag_tmpl" class="fag_box">
+        <section class="fag">
+            <img src="" alt="">
+            <div class="fag_container">
+                <h2></h2>
+            </div>
+
+
+        </section>
+    </template>
+
+
+
+
+
+    <!--SITE MENU-->
+
+
+
     <header>
 
         <div id="logo">
@@ -51,6 +80,137 @@
 
     </header>
 
-    <h1>Bestyrelse</h1>
+
+    <!--   Filter  navigation -->
+    <section id="filter-overskrift">
+        <div>
+            <h1>Bestyrelsen</h1>
+        </div>
+
+
+    </section>
+    <section id="filter-menu">
+
+
+        <nav class="filter_nav">
+            <h3></h3>
+        </nav>
+    </section>
+    <!--  fag  -->
+    <main class="fags fag_section"></main>
+
+
+    <script>
+        "use strict"
+
+
+        let theCategories;
+
+        let theFag;
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+
+            getTheCategories();
+        }
+
+        async function getTheCategories() {
+            let url = "http://davidpauner.dk/kea/09_CMS/IHS/wordpress/wp-json/wp/v2/bestyrelse";
+            let jsonData = await fetch(url);
+            theCategories = await jsonData.json();
+            generateCategoryBTNs();
+
+            getTheFag();
+
+        }
+
+
+        async function getTheFag() {
+
+
+            let url = "http://davidpauner.dk/kea/09_CMS/IHS/wordpress/wp-json/wp/v2/bestyrelse?per_page=100";
+
+            let jsonData = await fetch(url);
+            theFag = await jsonData.json();
+            console.log("LOADING DONE");
+
+
+            document.querySelector(".filter_nav h3").click();
+        }
+
+
+        function generateCategoryBTNs() {
+
+            let dest = document.querySelector(".filter_nav");
+            let temp = document.querySelector("#filter_btns_tmpl");
+
+            document.querySelector(".filter_nav h3").dataset.id = "alle";
+            document.querySelector(".filter_nav h3").addEventListener("click", categoryClick);
+            theCategories.forEach(category => {
+                // fjern uncategorised
+                if (category.slug != "uncategorised") {
+                    let klon = temp.cloneNode(true).content;
+                    klon.querySelector("h3").textContent = category.name;
+                    klon.querySelector("h3").dataset.name = category.name;
+                    klon.querySelector("h3").dataset.id = category.id;
+
+                    klon.querySelector("h3").addEventListener("click", categoryClick)
+                    dest.appendChild(klon);
+                }
+
+            })
+        }
+
+        function categoryClick() {
+
+            console.log(this.dataset.id);
+
+            filterContent(this.dataset.id);
+
+            document.querySelectorAll(".filter_nav h3").forEach(each => each.classList.remove("valgt"));
+            this.classList.add("valgt");
+
+        }
+
+        function filterContent(theFilter) {
+            let filtrerede;
+            if (theFilter == "alle") {
+                filtrerede = theFag;
+            } else {
+                filtrerede = theFag.filter(fag => fag.facilitetstype[0] == theFilter);
+            }
+            console.log(filtrerede);
+            showPosts(filtrerede);
+        }
+
+        function showPosts(theFilteredJson) {
+
+            let dest = document.querySelector(".fags");
+            let temp = document.querySelector("#fag_tmpl");
+            dest.innerHTML = "";
+
+            theFilteredJson.forEach(fag => {
+
+                let klon = temp.cloneNode(true).content;
+                klon.querySelector("h2").textContent = fag.title.rendered;
+                klon.querySelector("img").src = fag.billede.guid;
+
+
+                klon.querySelector(".fag").addEventListener("click", function() {
+                    dishClick(fag.id)
+                });
+
+                dest.appendChild(klon);
+
+
+            });
+        }
+
+        function dishClick(id) {
+            console.log("id", id)
+            window.location.href = "singleview.html?id=" + id;
+        }
+    </script>
     <script src="script.js"></script>
 </body></html>
