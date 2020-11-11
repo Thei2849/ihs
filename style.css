@@ -196,8 +196,9 @@ header {
 
 .logobillede {
     width: 150px;
-    height: 70px;
+    height: 75px;
     margin: 20px 0px 10px 0px;
+    object-fit: cover;
 
 
 }
