@@ -7,6 +7,61 @@
     <title></title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+
+    <style>
+        #splash {
+            margin: 70px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #splash img {
+            z-index: -1;
+        }
+
+        #splashtxt {
+            color: white;
+            font-size: 6rem;
+            font-weight: 700;
+            font-style: italic;
+            z-index: 1;
+            position: absolute;
+            padding: 150px 0 0 120px;
+
+        }
+
+        #splash h2 {
+            color: white;
+            font-weight: 300;
+            font-size: 1.5rem;
+        }
+
+
+        @media screen and (max-width: 600px) {
+
+
+            #splash {
+                margin: 30px;
+            }
+
+            #splashtxt {
+                color: white;
+                font-size: 2rem;
+                font-weight: 600;
+                padding: 40px;
+            }
+
+            #splash h2 {
+                color: white;
+                font-weight: 300;
+                font-size: 1rem;
+            }
+        }
+    </style>
+
+
+
 </head>
 
 <body>
@@ -47,6 +102,7 @@
             </a>
         </div>
 
+        <div id=color></div>
 
 
 
@@ -82,14 +138,23 @@
 
     </header>
 
-
     <!--   Filter  navigation -->
+
+    <section id="splash">
+        <h1 id="splashtxt">IDRÆTSHØJSKOLEN<br>
+            SØNDERBORG</h1>
+        <img src="imgs/Artboard%201%20copy.jpg">
+        <div class="fag_container">
+            <h2>Succesoplevelser for hjernen og hjertet</h2>
+        </div>
+    </section>
 
     <section id="filter-menu">
 
 
+
         <nav class="filter_nav">
-            <h3>Udvalgte</h3>
+            <h3></h3>
         </nav>
     </section>
     <!--  fag  -->
