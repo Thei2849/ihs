@@ -200,7 +200,7 @@
                 </div>
             </div>
             <a href="kontakt.html">Kontakt</a>
-            <a href="tilmelding.html">Tilmelding</a>
+            <a href="tilmelding.html" id="cta">Tilmelding</a>
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
         </nav>
 
@@ -272,7 +272,7 @@
             document.querySelector("h2").textContent = theFag.title.rendered;
             document.querySelector("h1").textContent = theFag.title.rendered;
             document.querySelector("#single_img").src = theFag.billede.guid;
-            document.querySelector("#beskrivelse").textContent = theFag.Beskrivelse;
+            document.querySelector("#beskrivelse").textContent = theFag.beskrivelse;
             document.querySelector(".previous").addEventListener("click", function() {
                 window.history.back();
             });
