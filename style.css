@@ -36,14 +36,14 @@ h2 {
 
 h3 {
 
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.1rem;
     letter-spacing: 0.04rem;
     text-transform: uppercase;
 }
 
 h4 {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1rem;
     letter-spacing: 0.04rem;
     line-height: 2rem;
@@ -87,10 +87,6 @@ p {
 }
 
 
-
-
-
-
 #liste {
     width: 70vw;
     max-width: 1100px;
@@ -104,13 +100,13 @@ p {
 
 #linje {
     border-bottom: 1px solid black;
-    margin: 60px 150px 0px 150px;
+    margin: 60px 25vh 0px 25vh;
 
 }
 
 #linje-top {
     border-bottom: 1px solid black;
-    margin: 60px 150px 60px 150px;
+    margin: 60px 25vh 60px 25vh;
 
 }
 
@@ -445,6 +441,10 @@ iframe {
     padding: 20px 0 0 0;
 }
 
+.rejse_section h4 {
+    padding: 20px 0 0 0;
+}
+
 
 .tekst_div_2 {
     max-width: 900px;
@@ -461,4 +461,8 @@ iframe {
     text-transform: uppercase;
     padding-bottom: 20px;
 
+}
+
+#priser_P {
+    padding: 0px;
 }
