@@ -69,7 +69,7 @@ p {
 
 #color {
     background-color: #bacec8;
-    height: 60vh;
+    height: 600px;
     width: 100vw;
     left: 0;
     position: absolute;
@@ -191,9 +191,9 @@ header {
 }
 
 .logobillede {
-    width: 150px;
-    height: 75px;
-    margin: 20px 0px 10px 0px;
+    width: 170px;
+    height: 95px;
+    margin: 15px 0px 10px 0px;
     object-fit: cover;
 
 
@@ -207,7 +207,7 @@ header {
 
 .topnav {
     overflow: hidden;
-    padding: 30px 0px 30px 0px;
+    padding: 40px 0px 40px 0px;
     margin: 0;
 
 }
