@@ -88,6 +88,7 @@ p {
 .tekst_div {
     max-width: 500px;
     text-align: center;
+    padding: 0px 15px 15px 15px;
 
 }
 
