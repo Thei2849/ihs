@@ -468,6 +468,13 @@ iframe {
 
 }
 
+#forside-overskrift-2 {
+    display: flex;
+    margin: 50px 0 30px 0px;
+    flex-direction: column;
+
+}
+
 .tekst_div_3 {
     max-width: 900px;
     padding: 0px 50px 0px 50px;
@@ -478,12 +485,32 @@ iframe {
 #forside-overskrift h3 {
     color: black;
     font-weight: 600;
-    font-size: 2.1rem;
+    font-size: 1.2rem;
     letter-spacing: 0.09rem;
     text-transform: uppercase;
     margin-bottom: 20px;
 
 }
+
+#forside-overskrift-2 h3 {
+    color: black;
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 0.09rem;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+
+}
+
+.rejse_video_forside {
+    margin: 0 auto;
+    width: 70vw;
+    display: flex;
+
+    flex-wrap: wrap;
+
+}
+
 
 
 
@@ -533,5 +560,26 @@ iframe {
         flex-wrap: wrap;
 
     }
+
+    #forside-overskrift h3 {
+        color: black;
+        font-weight: 600;
+        font-size: 2.1rem;
+        letter-spacing: 0.09rem;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+
+    }
+
+    #forside-overskrift-2 h3 {
+        color: black;
+        font-weight: 600;
+        font-size: 2.1rem;
+        letter-spacing: 0.09rem;
+        text-transform: uppercase;
+
+
+    }
+
 
 }
