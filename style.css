@@ -11,7 +11,7 @@
 
 body {
     font-family: sans-serif;
-    color: #3c3c3c;
+
 }
 
 /*** fonts ***/
@@ -109,18 +109,19 @@ p {
     align-items: center;
     border-bottom: 1px solid black;
     padding: 70px 0 0px 0;
-    width: 60vw;
+    width: 70vw;
 
 
 }
 
 #linje-top {
+    display: flex;
+    align-items: center;
     border-bottom: 1px solid black;
-    margin: 60px 25vh 60px 25vh;
+    padding: 70px 0 60px 0;
+    width: 70vw;
 
 }
-
-
 
 
 
